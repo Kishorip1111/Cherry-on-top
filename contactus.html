@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Restaurant</title>
+  <style>/* General Styles */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+      color: #111;
+    }
+    
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+    
+    h1, h2 {
+      margin-bottom: 1rem;
+    }
+    
+    /* Contact Info Section */
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+    
+    .info-box {
+      padding: 1.5rem;
+      border-radius: 10px;
+      flex: 1;
+      min-width: 260px;
+      max-width: 400px;
+    }
+    
+    .orange-box {
+      background-color: #e95111;
+      color: #fff;
+    }
+    
+    .dark-box {
+      background-color: #111;
+      color: #fff;
+    }
+    
+    /* Form Section */
+    .form-section {
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    
+    button {
+      background-color: #f4b400;
+      color: #000;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #e8a800;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    
+    .footer-left {
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    .footer-hours {
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    .social-icons a {
+      color: #f4b400;
+      text-decoration: none;
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .contact-info, footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    </style>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+
+  <section class="contact-info">
+    <div class="info-box orange-box">
+      <h2>Address</h2>
+      <p>1234 Divi St. #1000<br>San Francisco, CA 94220</p>
+
+      <h2>Call Us</h2>
+      <p>(255) 352-6258</p>
+
+      <h2>Email</h2>
+      <p>hello@divipoke.com</p>
+    </div>
+
+    <div class="info-box dark-box">
+      <h2>Store Hours</h2>
+      <p>Monday: 11am – 9pm</p>
+      <p>Tuesday: 11am – 9pm</p>
+      <p>Wednesday: 1pm – 8pm</p>
+      <p>Thursday: 11am – 9pm</p>
+      <p>Friday: 11am – 9pm</p>
+      <p>Saturday: 12pm – 5pm</p>
+      <p>Sunday: Closed</p>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <h2>Send a Message</h2>
+    <p>Feel free to reach out to us. We'd love to hear from you!</p>
+    <form onsubmit="submitForm(event)">
+      <input type="text" placeholder="Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <textarea rows="5" placeholder="Message" required></textarea>
+      <button type="submit">SUBMIT</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-left">
+      <p><strong>Address</strong><br>1234 Divi St. #1000, San Francisco, CA 94220</p>
+      <p><strong>Call Us</strong><br>(255) 352-6258</p>
+      <div class="social-icons">
+        <a href="#">🔶</a>
+        <a href="#">🔷</a>
+        <a href="#">🟡</a>
+      </div>
+    </div>
+
+    <div class="footer-hours orange-box">
+      <h2>Store Hours</h2>
+      <p>Monday: 11am – 9pm</p>
+      <p>Tuesday: 11am – 9pm</p>
+      <p>Wednesday: 1pm – 8pm</p>
+      <p>Thursday: 11am – 9pm</p>
+      <p>Friday: 11am – 9pm</p>
+      <p>Saturday: 12pm – 5pm</p>
+      <p>Sunday: Closed</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

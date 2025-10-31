@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🍴 Snacks - Cherry On The Top</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      margin: 0;
+      background: #fdfcfb;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #fff5e1;
+      font-size: 1.8rem;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    nav {
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+    .container {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+    }
+    .menu {
+      flex: 3;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 10px;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .card h4 {
+      margin: 10px 0 5px;
+    }
+    .card button {
+      background: #27ae60;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .cart {
+      flex: 1;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+    .cart h3 {
+      text-align: center;
+    }
+    .cart ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .cart ul li {
+      margin: 5px 0;
+    }
+    .total {
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .cart button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .cancel {
+      background-color: #e74c3c;
+      color: white;
+    }
+    .checkout {
+      background-color: #2980b9;
+      color: white;
+    }
+  </style>
+  <script defer src="cart.js"></script>
+</head>
+
+<body>
+  <header>🍴 Cherry On The Top - Snacks</header>
+  <nav>
+    <button><a href="hack2.html"><div>🥪 Snacks</div></a></button>
+    <button><a href="dessert1.html"><div>🍰 Desserts</div></a></button>
+  </nav>
+
+  <div class="container">
+    <div class="menu">
+      <div class="card">
+        <img src="D:\HackDev\images\samosa.jfif" alt="Samosa" />
+        <h4>Samosa</h4>
+        <p>₹25</p>
+        <button onclick="addToCart('Samosa', 25)">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="images/sandwich.jpg" alt="Sandwich" />
+        <h4>Sandwich</h4>
+        <p>₹90</p>
+        <button onclick="addToCart('Sandwich', 90)">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="D:\HackDev\images\noodles.jfif" alt="Noodles" />
+        <h4>Noodles</h4>
+        <p>₹80</p>
+        <button onclick="addToCart('Noodles', 80)">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="D:\HackDev\images\fries.jfif" alt="French Fries" />
+        <h4>French Fries</h4>
+        <p>₹70</p>
+        <button onclick="addToCart('French Fries', 70)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="cart">
+      <h3>🛒 Your Cart</h3>
+      <ul id="cart-items"></ul>
+      <div class="total">Total: ₹<span id="total">0</span></div>
+      <button class="cancel" onclick="clearCart()">Cancel</button>
+      <button class="checkout" onclick="checkout()">Place Order</button>
+    </div>
+  </div>
+
+  <script>
+    const cartItemsUl = document.getElementById("cart-items");
+    const totalSpan = document.getElementById("total");
+    let total = 0;
+
+    function addToCart(name, price) {
+  const li = document.createElement("li");
+
+  const textSpan = document.createElement("span");
+  textSpan.textContent = `${name} - ₹${price}`;
+
+  const removeBtn = document.createElement("button");
+  removeBtn.textContent = "❌";
+  removeBtn.style.marginLeft = "10px";
+  removeBtn.style.background = "#e74c3c";
+  removeBtn.style.color = "white";
+  removeBtn.style.border = "none";
+  removeBtn.style.padding = "2px 6px";
+  removeBtn.style.borderRadius = "4px";
+  removeBtn.style.cursor = "pointer";
+
+  removeBtn.onclick = function () {
+    li.remove();
+    total -= price;
+    totalSpan.textContent = total;
+  };
+
+  li.appendChild(textSpan);
+  li.appendChild(removeBtn);
+  cartItemsUl.appendChild(li);
+
+  total += price;
+  totalSpan.textContent = total;
+}
+
+    function clearCart() {
+      cartItemsUl.innerHTML = "";
+      total = 0;
+      totalSpan.textContent = total;
+    }
+
+    function checkout() {
+      if (total > 0) {
+        alert("Thank you! Your total is ₹" + total);
+        clearCart();
+      } else {
+        alert("Your cart is empty.");
+      }
+    }
+    function removeFromCart(itemElement, price) {
+  cartItemsUl.removeChild(itemElement);
+  total -= price;
+  totalSpan.textContent = total;
+}
+
+  </script>
+</body>
+</html>

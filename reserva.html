@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurant Pronto - Table Reservation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .reservation-container {
+      background: white;
+      border-radius: 10px;
+      padding: 30px 25px;
+      width: 360px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .reservation-container h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 15px;
+    }
+
+    .form-group select,
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .note {
+      font-size: 13px;
+      color: #555;
+      background: #f6f6f6;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+    }
+
+    .btn-next {
+      background-color: #f99b1d;
+      border: none;
+      color: white;
+      padding: 14px;
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .btn-next:hover {
+      background-color: #e88c0b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="reservation-container">
+    <h2>TABLE RESERVATION</h2>
+    <form id="reservationForm">
+      <div class="form-group">
+        <select required>
+          <option value="">Select number of persons</option>
+          <option>1 Person</option>
+          <option>2 Persons</option>
+          <option>3 Persons</option>
+          <option>4 Persons</option>
+          <option>5+ Persons</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <input type="date" required>
+      </div>
+
+      <div class="form-group">
+        <input type="time" required>
+      </div>
+
+      <div class="form-group">
+        <textarea placeholder="Comments (optional)" rows="2"></textarea>
+      </div>
+
+      <div class="note">
+        Table is kept for 15 min after reservation time.<br>
+        We appreciate you being on time.
+      </div>
+
+      <button type="submit" class="btn-next"><a href="booked.html">Next</a></button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('reservationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Your table has been reserved!');
+    });
+  </script>
+</body>
+</html>

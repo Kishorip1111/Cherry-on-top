@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script defer src="cart.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cherry On The Top - Desserts</title>  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      margin: 0;
+       background-size: cover;
+    }
+    header {
+      background-color: rgba(255,255,255,0.9);
+      text-align: center;
+      padding: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      padding: 15px 0;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    nav div {
+      cursor: pointer;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+    }
+    .menu {
+      flex: 3;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .card h4 {
+      margin: 10px 0 5px;
+    }
+    .card button {
+      background: #27ae60;
+      color: white;
+      border: none;
+      padding: 8px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .cart {
+      flex: 1;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+    .cart h3 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .cart ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .cart ul li {
+      padding: 5px 0;
+    }
+    .total {
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .cart button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .cancel {
+      background-color: #e74c3c;
+      color: white;
+    }
+    .checkout {
+      background-color: #2980b9;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>🍒 Cherry On The Top - Desserts</header>
+  <nav>
+    <button><a href="hack2.html"><div>🥪 Snacks</div></a></button>
+    <button><a href="dessert1.html"><div>🍰 Desserts</div></a></button>
+  </nav>
+
+  <div class="container">
+    <div class="menu" id="menu">
+      <!-- Items will be injected via JS -->
+    </div>
+
+    <div class="cart">
+      <h3>🛒 Your Cart</h3>
+      <ul id="cart-items"></ul>
+      <div class="total">Total: ₹<span id="total">0</span></div>
+      <button class="cancel" onclick="clearCart()">Cancel Order</button>
+      <button class="checkout" onclick="checkout()">Place Order</button>
+    </div>
+  </div>
+
+  <script>
+    
+    const menuItems = [
+  {
+    name: "Chocolate Cake",
+    price: 120,
+    image: "chocolate cake.jpeg"
+  },
+  {
+    name: "Gulab Jamun",
+    price: 80,
+    image: "download (1).jfif"
+  },
+  {
+    name: "Ice Cream",
+    price: 60,
+    image: "download (2).jfif"
+  },
+  {
+    name: "Brownie",
+    price: 100,
+    image: "brownie.jfif"
+  },
+  {
+    name: "Cupcake",
+    price: 50,
+    image: "cup cake.jfif"
+  }
+];
+
+
+
+
+
+
+
+    const menuDiv = document.getElementById("menu");
+    const cartItemsUl = document.getElementById("cart-items");
+    const totalSpan = document.getElementById("total");
+    let total = 0;
+
+    menuItems.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${item.image}" alt="${item.name}" />
+        <h4>${item.name}</h4>
+        <p>₹${item.price}</p>
+        <button onclick='addToCart("${item.name}", ${item.price})'>Add to Cart</button>
+      `;
+      menuDiv.appendChild(card);
+    });
+
+    function addToCart(name, price) {
+      const li = document.createElement("li");
+      li.textContent = `${name} - ₹${price}`;
+      cartItemsUl.appendChild(li);
+      total += price;
+      totalSpan.textContent = total;
+    }
+
+    function clearCart() {
+      cartItemsUl.innerHTML = "";
+      total = 0;
+      totalSpan.textContent = total;
+    }
+
+    function checkout() {
+      if (total > 0) {
+        alert("Thank you for your order! Total Bill: ₹" + total);
+        clearCart();
+      } else {
+        alert("Your cart is empty.");
+      }
+    }
+  </script>
+</body>
+</html>

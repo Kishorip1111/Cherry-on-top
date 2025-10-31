@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Table Booking Form</title>
+  <style>
+   body{
+    background-image: url('imgtable.jfif');
+    background-size: cover;         /* Makes image cover the entire background */
+      background-position: center;    /* Centers the image */
+      background-repeat: no-repeat;   /* Prevents image from repeating */
+      height: 100vh;                  /* Full screen height */
+      margin: 0;
+   }
+   
+   
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: url('https://www.w3layouts.com/wp-content/uploads/2018/09/restaurant-table-reservation-form.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 4px black;
+    }
+
+    .form-container {
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 30px 25px;
+      border-radius: 5px;
+      width: 320px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .form-container input,
+    .form-container select {
+      width: 100%;
+      padding: 10px 12px;
+      margin: 10px 0;
+      border: 1px solid #444;
+      background-color: #111;
+      color: white;
+    }
+
+    .form-container input::placeholder {
+      color: #ccc;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background-color: #ffcc00;
+      border: none;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .form-container button:hover {
+      background-color: #e6b800;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.75rem;
+      color: #ccc;
+    }
+
+    .footer a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>TABLE BOOKING FORM</h1>
+
+  <div class="form-container">
+    <form id="bookingForm">
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <input type="date" required>
+      <input type="time" required>
+      <input type="number" placeholder="Number of Adults" min="1" required>
+      <input type="number" placeholder="Number of Children" min="0" required>
+      <button type="submit"><a href="reserva.html">RESERVE A TABLE</a></button>
+    </form>
+  </div>
+
+  <div class="footer">
+    ©2018 Table Booking Form. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">W3layouts</a>
+  </div>
+
+  <script>
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("Table reserved successfully!");
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fffaf7;
+      padding: 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff5e57;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #ff5e57;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background-color: #e04842;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Enter Your Details</h2>
+
+  <form id="customerDetailsForm">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="10-digit mobile number">
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email">
+
+    <label for="address">Delivery Address:</label>
+    <textarea id="address" name="address" rows="4" required></textarea>
+
+    <label for="note">Special Instructions (optional):</label>
+    <textarea id="note" name="note" rows="3" placeholder="e.g., No onions, extra napkins..."></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>

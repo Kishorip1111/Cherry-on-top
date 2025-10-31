@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shipment Track</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff;
+      color: #444;
+      margin: 0;
+      padding: 0;
+    }
+    .track-container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #eee;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    .track-header {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    .track-box {
+      background-color: #a2db8c;
+      padding: 20px;
+      border-radius: 5px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+    .track-box p {
+      margin: 5px 0;
+    }
+    .status-flow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 20px;
+      position: relative;
+    }
+    .status-flow::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      right: 5%;
+      height: 4px;
+      background-color: #ddd;
+      z-index: 0;
+    }
+    .step {
+      position: relative;
+      z-index: 1;
+      width: 100px;
+      text-align: center;
+    }
+    .step-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #6fbf73;
+      margin: 0 auto 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+    }
+    .step-red {
+      background-color: #f07c7c;
+    }
+    .step-label {
+      font-size: 14px;
+    }
+    .footer {
+      font-size: 12px;
+      margin-top: 30px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="track-container">
+    <div class="track-header">SHIPMENT TRACK</div>
+    <div class="track-box">
+      <h3>ORDER TRACKING: ORDER NO</h3>
+      <p><strong>Shipped Via:</strong> Ipsum Dolor</p>
+      <p><strong>Status:</strong> Checking Quality</p>
+      <p><strong>Expected Date:</strong> 7-NOV-2015</p>
+    </div>
+    <div class="status-flow">
+      <div class="step">
+        <div class="step-circle"><span>📝</span></div>
+        <div class="step-label">Confirmed Order</div>
+      </div>
+      <div class="step">
+        <div class="step-circle"><span>⚙️</span></div>
+        <div class="step-label">Processing Order</div>
+      </div>
+      <div class="step">
+        <div class="step-circle"><span>🔍</span></div>
+        <div class="step-label">Quality Check</div>
+      </div>
+      <div class="step">
+        <div class="step-circle step-red"><span>🚚</span></div>
+        <div class="step-label">Dispatched Item</div>
+      </div>
+      <div class="step">
+        <div class="step-circle step-red"><span>📦</span></div>
+        <div class="step-label">Product Delivered</div>
+      </div>
+    </div>
+    <div class="footer">
+      Copyright © Shipment Track Widget. All rights reserved | Design by w3layouts
+    </div>
+  </div>
+</body>
+</html>

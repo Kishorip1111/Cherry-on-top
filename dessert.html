@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cherry On The Top - Desserts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      margin: 0;
+      background: #f5f2ed url('https://i.ibb.co/XFRBQHb/wood.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    header {
+      background-color: rgba(255,255,255,0.9);
+      text-align: center;
+      padding: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      padding: 15px 0;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    nav div {
+      cursor: pointer;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+    }
+    .menu {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .card h4 {
+      margin: 10px 0 5px;
+    }
+    .card button {
+      background: #e67e22;
+      color: white;
+      border: none;
+      padding: 8px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>🍒 Cherry On The Top - Desserts</header>
+  <nav>
+    <button><a href="hack2.html"></a><div>🥪 Snacks</div>
+    <button><a href="dessert.html"><div>🍰 Desserts</div></a></button>
+    
+  </nav>
+
+  <div class="container">
+    <div class="menu" id="menu">
+      <!-- Items will be injected via JS -->
+    </div>
+  </div>
+
+  <script>
+    const menuItems = [
+      { name: "Chocolate Cake", price: 120, image: "https://i.ibb.co/YXKkD7G/chocolate-cake.jpg" },
+      { name: "Gulab Jamun", price: 80, image: "https://i.ibb.co/DVvWTzW/gulab-jamun.jpg" },
+      { name: "Ice Cream", price: 60, image: "https://i.ibb.co/jwq7FLr/ice-cream.jpg" },
+      { name: "Brownie", price: 100, image: "https://i.ibb.co/2qTDpSt/brownie.jpg" },
+      { name: "Cupcake", price: 50, image: "https://i.ibb.co/3FMmGGr/cupcake.jpg" }
+    ];
+
+    const menuDiv = document.getElementById("menu");
+
+    menuItems.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${item.image}" alt="${item.name}" />
+        <h4>${item.name}</h4>
+        <p>₹${item.price}</p>
+        <button onclick='alert("Added ${item.name} to cart!")'>Add to Cart</button>
+      `;
+      menuDiv.appendChild(card);
+    });
+  </script>
+</body>
+</html>

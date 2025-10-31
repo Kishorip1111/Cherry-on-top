@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restfood Restaurant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #111;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #000;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .logo h2 {
+      font-size: 1.5rem;
+      color: yellow;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: yellow;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 50px;
+      background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fit=crop&w=1500&q=80') no-repeat center center;
+      background-size: cover;
+    }
+
+    .hero-text {
+      max-width: 50%;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero-text p {
+      margin: 20px 0;
+      color: #ddd;
+      max-width: 500px;
+    }
+
+    .hero-text button {
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: yellow;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero-text button:hover {
+      background-color: gold;
+    }
+
+    .hero-images {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .hero-images img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text,
+      .hero-images {
+        max-width: 100%;
+      }
+
+      .hero-images {
+        margin-top: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+    <script>
+        function goToMenu() {
+          window.location.href = "hack2.html";
+        }
+        function customerDetails() {
+          alert("Redirecting to customer details...");
+          // window.location.href = 'booking.html'; // Uncomment if booking page exists
+        }
+        function bookTable() {
+          alert("Redirecting to booking...");
+          // window.location.href = 'booking.html'; // Uncomment if booking page exists
+        }
+      </script>
+  <header>
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="logo">
+      <h2>Cherry On top</h2>
+    </div>
+    <nav>
+      <ul>
+        
+        <li><a href="designing.html">ABOUT US</a></li>
+    
+        <li><a href="contactus.html">CONTACT US</a></li>
+
+        <li><a href="deli.html">DELIVERY</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>BEST QUALITY FOOD</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias provident laborum, recusandae delectus corrupti.</p>
+      <button onclick="customerDetails()"><a href="customer.html">Customer Detail</a></button>
+      <button onclick="goToMenu()">Go to Menu</button>
+      <button onclick="bookTable()"><a href="booktable.html">BOOK A TABLE</a></button>
+    </div>
+    <div class="hero-images">
+     
